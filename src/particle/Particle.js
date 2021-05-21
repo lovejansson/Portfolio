@@ -1,32 +1,36 @@
 export class Particle{
 
-    constructor(ctx,x,y,radius,color, tinkle, drift){
+    constructor(ctx,x,y,radius,color, tinkle, fade){
         this.ctx = ctx;
         this.x = x;
         this.y = y;
         this.radius = radius;
+        this.originalRadius = radius;
         this.color = color;
         this.tinkle = tinkle;
-        this.drift = drift;
+        this.fade = fade;
+        this.tinkleChange = -0.08;
     }
 
     update(){
         
         if(this.tinkle){
 
-            this.radius -= 1;
+            this.radius += this.tinkleChange;
             console.log("update")
     
-            if(this.radius <= 0.1){
-                this.radius = Math.random();
+            if(this.radius < 0.08){
+               
+                this.tinkleChange = 0.08;
+            }else if(this.radius > this.originalRadius){
+                this.tinkleChange = -0.08;
             }
         }else if(this.drift){
 
-        //   let xChange =  Math.floor(Math.random() * 2) === 1 ? Math.random() * -1 : Math.random() * 1;
-        //   let yChange =  Math.floor(Math.random() *2) === 1 ? Math.random() * -1 : Math.random() * 1;
-
-        //   this.x += xChange;
-        //   this.y += yChange;
+            if(this.radius > 0){
+                this.radius -= 0.1;
+            }
+      
         }
      
     }
