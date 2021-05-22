@@ -1,55 +1,25 @@
 <script>
-    import { createEventDispatcher } from "svelte";
+    export let project = {};
 
-    const dispatch = createEventDispatcher();
-
-let colors = ["#4569BD", "#324C8A", "#4D76D6", "#314B89"]
-    export let backgroundColor = "#4569BD";
-    export let title = "";
-    export let description = "";
     export let mode = "dark";
 
-function click(){
-    dispatch("click");
-}
+
 </script>
 
-<div tabindex="0" class={mode === "dark" ? "dark" : "light"} on:click={click}>
-    <h2>Vanilla</h2> 
-    <p >Short description of project</p> 
+<div tabindex="0" class={mode === "dark" ? "dark" : "light"} on:click>
+    <h2>{project.title}</h2> 
+    <p>{project.description_short}</p> 
     
     <ul>
-            <!-- <li><span class="fab fa-css3-alt"></span></li>
-            <li><span class="fab fa-html5"></span></li>
-            <li><span class="fab fa-node-js"></span></li>
-            <li><span class="fab fa-js-square"></span></li>   
-            <li><span class="fab fa-android"></span></li>  -->
-            <li><span class="fas fa-code"></span></li> 
-            <!-- <li><p>Android</p></li> 
-            <li><p>Java</p></li> 
-            <li><p>Firebase</p></li> 
-            <li><p>Mockito</p></li>
-            <li><p>Dagger2</p></li> -->
+ 
+            <li><span class="fas fa-code"></span></li>  
+      
 
-             <!-- <li><p>Svelte</p></li> 
-            <li><p>Express</p></li> 
-            <li><p>MongoDB</p></li>  -->
+            {#each project.techniques as tech}
 
-    
-             <!-- <li><p>Vanilla JS</p></li> 
-            <li><p>HTML</p></li> 
-            <li><p>CSS</p></li>
-          -->
-            <!-- <li><p>C#</p></li> 
-            <li><p>.NET</p></li>  -->
+                <li><p>{tech}</p></li> 
 
-            <!-- <li><p>React native</p></li> 
-            <li><p>.NET</p></li>  -->
-
-
-<!--             
-             <li><p>C++</p></li> 
-            <li><p>SFML</p></li>   -->
+            {/each}
     </ul>
 </div>
 
@@ -64,6 +34,10 @@ function click(){
       margin: 0.5em;
       padding: 0.5em 1em;
       transition:0.2s;
+      display: flex;
+      flex-direction: column;
+     
+
    
   }
 
@@ -79,12 +53,17 @@ function click(){
     
   }
 
+  h2 + p {
+    margin-bottom: 0.5em;
+  }
+
+ 
 
   p {
    
-
-      margin-bottom: 0.5em;
       color: hsl(0, 0%, 82%);
+      font-size:1.6rem;
+   
       
   }
 
@@ -120,29 +99,32 @@ function click(){
     color: hsl(226, 48%, 8%);
   }
 
+ul {
+  margin-top: auto;
+}
 
 
 
   .dark span{
-      color: hsl(226, 47%, 0%);
+      color: hsl(226, 47%, 1%);
   }
 
   .light span{
-      color: hsl(226, 48%, 8%);
+      color: hsl(226, 48%, 9%);
   }
 
   .dark li p{
-      color: hsl(226, 47%, 0%);
+      color: hsl(226, 47%, 1%);
   }
 
   .light li p{
-      color: hsl(226, 48%, 8%);
+      color: hsl(226, 48%, 9%);
   }
 
     li p {
         font-family:  "Yantramanav-bold";
-        font-size: 1.6rem;
-        margin-bottom: 0;
+        font-size: 1.5rem;
+      
     }
 
 li:not(:last-child) p::after{
@@ -170,9 +152,7 @@ li:not(:last-child) p::after{
   ul{
      display: flex;
      flex-wrap: wrap;
-     align-items: center;
-      
-      
+     align-items: center;  
    
   }
 

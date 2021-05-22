@@ -1,6 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 html{
@@ -42,25 +43,47 @@ html, body {
 	src: url("./fonts/Yantramanav-Bold.ttf");
 }
 
-h2 {
+h1, h2 {
 	font-family: "Lateef";
 	font-size: 4.2rem;
 }
+
+
+
+nav button {
+	font-family: "Lateef";
+		font-size: 3.2rem;
+}
+
+	button:hover{
+
+
+		cursor: pointer;
+		
+	}
+
+	button:focus{
+		outline:none;
+	}
 
 body {
 	color: #fff;
 	font-size: 1.8rem;
 	box-sizing: border-box;
-	font-family: "Yantramanav";
+
 	
+}
+
+p, button{
+	font-family:  "Yantramanav", monospace;
 }
 
 button{
 	background: none;
 	border: none;
+
 	
 }
-
 
 
 ul{

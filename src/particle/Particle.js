@@ -17,7 +17,7 @@ export class Particle{
         if(this.tinkle){
 
             this.radius += this.tinkleChange;
-            console.log("update")
+        
     
             if(this.radius < 0.08){
                

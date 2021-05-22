@@ -3,35 +3,28 @@
 
 	import { Particle } from "./particle/Particle.js";
 
-	import Card from "./Card.svelte";
+	import Projects from "./Projects.svelte";
 
-	import Details from "./Details.svelte";
+	import About from "./About.svelte";
 
-
-	
-	
 	let ctx;
 	let canvas;
 	let starz;
 	let trail;
 
-	let showDetails = false;
-	
-	 let projects;
-
-
-	let showInfo = false;
+	let currentPage = "projects";
 
 	onMount(async () => {
-		ctx = canvas.getContext("2d");
-		starz = createStars(400);
-		updateStars();
+		history.replaceState({page: "projects"}, document.title);
 
-		let projectsJson = await fetch("/projects.json")
-		projects = await projectsJson.json();
+		ctx = canvas.getContext("2d");
+		starz = createStars();
+		updateStars();
 
 		
 	});
+
+
 
 	function setCanvasMetrics(){
 
@@ -42,7 +35,7 @@
 
 	}
 
-	function createStars(num){
+	function createStars(){
 		
 		setCanvasMetrics();
 
@@ -50,8 +43,8 @@
 
 		let particles = [];
 
-				
-		for(let i = 0; i < 1200; ++i){
+		let num = window.innerWidth;
+		for(let i = 0; i < num; ++i){
 
 			let x = Math.random() * canvas.width;
 			let y = Math.random() * canvas.height;
@@ -61,11 +54,11 @@
 			
 
 			if( i % 2 == 0){
-				 radius = Math.random();
-				 tinkle = radius > 0.5;
+				 radius = Math.random() * 1.2;
+				 tinkle = radius > 0.4;
 
 			}else{
-				radius = Math.random() / 3;
+				radius = Math.random() / 2;
 				tinkle = radius > 0.1;
 
 			}
@@ -93,123 +86,71 @@
 	
 	}
 
-	function toggleShowInfo(){
-		showInfo = !showInfo;
+
+// 	function drawStarsTrail(){
+// 		let particles = [];
+
+// for(let i = 0; i < 10; ++i){
+// 	let x = Math.random() * canvas.width;
+// 	let y = Math.random() * canvas.height;
+// 	let radius = Math.random() * 0.8;
+// 	let tinkle = false;
+// 	let fade = true;
+
+// 	let a = Math.random().toFixed(1);
+
+
+// 	 particle = new Particle(ctx, x, y, radius, `rgba(225, 225, 255, ${a}`, tinkle, fade);
+// 		particles.push(particle);
+// 	}
+
+// 	}
+
+	function changePage(page){
+		currentPage = page;
+	
 	}
 
-	function toggleShowDetails(){
-		showDetails = !showDetails;
+	function changePageToProjects(){
+		changePage("projects");
 	}
 
-	function drawStarsTrail(){
-		let particles = [];
-
-for(let i = 0; i < 10; ++i){
-	let x = Math.random() * canvas.width;
-	let y = Math.random() * canvas.height;
-	let radius = Math.random() * 0.8;
-	let tinkle = false;
-	let fade = true;
-
-	let a = Math.random().toFixed(1);
-
-
-	 particle = new Particle(ctx, x, y, radius, `rgba(225, 225, 255, ${a}`, tinkle, fade);
-		particles.push(particle);
-	}
-
+	function changePageToAbout(){
+		changePage("about");
 	}
 
 </script>
 
-	<div id="content" on:mousemove={drawStarsTrail}>
+	<div  on:resize={createStars} id="content">
 	<header>
 	<h1>
 
 		Love
 
 	</h1>
-	<button on:click={toggleShowInfo}><svg class:rotate={showInfo} viewBox="0 0 100 100" ><path d="M 10 30 L 50 70 L 90 30"></path></svg></button></header>
-
+	<nav>
+	
+	<button class:current-page={currentPage === "projects"} on:click={changePageToProjects}>Projects</button>
+	<button class:current-page={currentPage === "about"} on:click={changePageToAbout}>About</button>
+	</nav>
+</header>
 	<main>
 
-		
-	<!-- <section class:show-info={showInfo} id="info">
-		<div class="info-item">
-		<p>
-			<span class="label">
-				Name
-			</span>
-		</p>
-		<p>Love Jansson</p>
-	</div> -->
+	{#if currentPage === "projects"}
 
+	<Projects/>
 
-
-	<!-- <div class="info-item">
-
-		<p>
-			<span class="label">
-				Education
-			</span>
-		</p>
-		<p>Programming via Linköping University</p>
-	</div>
-
-	<div class="info-item">
-
-		<p>
-			<span class="label">
-				Interests
-			</span>
-		</p>
-		<ul><li><p>Frontend development</p></li><li><p>Music</p></li><li><p>Movies & series</p></li>
-			<li><p>Art with patterns</p></li><li><p>Travel</p></li></ul>
-
-	</div> -->
-
-	
-
-	<!-- <div class="info-item">
-
-		<p>
-			<span class="label">
-				Contact
-			</span>
-		</p>
-		<p>lovejansson@gmail.com</p>
-
-	</div>
-		
-	
-
-	</section> -->
-
-	{#if showDetails}
-	<Details on:close={toggleShowDetails}/>
 	{:else}
 
-	<section id="projects">
-		<ul>	
-			<Card mode="dark" on:click={toggleShowDetails}/>
-			<Card mode="light" on:click={toggleShowDetails}/>
-			<Card mode="dark" on:click={toggleShowDetails}/>
-			<Card mode="light" on:click={toggleShowDetails}/>
-			<Card mode="dark" on:click={toggleShowDetails}/>
-			<Card mode="light" on:click={toggleShowDetails}/>
-		</ul>
-
-	</section>
+	<About/>
 
 	{/if}
-
-
 
 </main>
 
 </div>
 
-<canvas bind:this={canvas} on:resize={createStars}>
+<canvas bind:this={canvas}>
 
 </canvas>
 
@@ -219,42 +160,15 @@ for(let i = 0; i < 10; ++i){
 <style>
 
 
-
-
-@font-face{
-	font-family: "Lateef";
-	src: url("./fonts/Lateef-Regular.ttf")
-}
-
-h1{
-	font-family: "Lateef", Arial;
-}
-
 	canvas {
 	position: fixed;
 	top:0;
 	width: 100%;
 	height: 100%;
 	background-color: #000000;
+	z-index: 0;
 	
 	}
-
-	svg {
-		fill: transparent;
-		stroke: #fff;
-		stroke-width: 16;
-		width: 32px;
-		height: 32px;
-	
-
-		
-	}
-
-	.rotate{
-		transform: rotate(180deg);
-	}
-
-
 
 	#content{
 		display: flex;
@@ -266,96 +180,79 @@ h1{
 		width: 100%;
 		height:100%;
 		z-index: 1;
+		overflow-y: auto;
 		
 	}
 
-	main {
-	
-		background-color: transparent;
-		
-		
-		
-	
-		
-	}
 	header{
-		background: transparent;
-		border: 1px dashed rgba(255, 255, 255, 0.5);
-	
-		width: 200px;
+		padding: 0 1em;
+	}
+	header > * {
+		margin-right: 1em;
+	}
+
+
+
+	nav button{
+		
+		color: #fff;
+		margin: 0.5em;
+		padding: 0;
 		
 	}
 
 
-	#info{
-		
-		position: fixed;
-		top: 100px;
 
-		left: 0;
-		width: 200px;
-		background-color: #000005;
-		margin-left: 2.4rem;
-		margin-top: 2.4rem;
-		border-radius: 4px;
-		
-		opacity: 0;
-	
-/* offset-x | offset-y | blur-radius | spread-radius | color */
-		/* box-shadow: 2px 2px 10px 10px #000; */
-		border: 1px solid rgba(255, 255, 255, 0.5);
-		transition: 0.4s;
-	
+	button:hover, button:focus{
+		color: hsl(0, 0%, 75%);
+
 	}
 
-	.show-info {
-		opacity: 1 !important;
+	.current-page{
+		position: relative;
 	}
 
-	.info-item {
-		margin: 0.75em 1em;
-		margin-right: 0;
-		
+	.current-page::before{
+		content: "";
+		width: 0.4em;
+		height: 0.4em;
+		position: absolute;
+		top: 0.4em;
+		left: -0.6em;
+		border-radius: 2px;
+		background-color: hsl(226, 47%, 51%);
+		  box-shadow: 3px 2px 0 0 hsl(226, 47%, 21%);
+		animation-name: scale;
+		animation-duration: 0.2s;
+		animation-iteration: 1;
+
 	}
 
-	#projects{
-	
-		background: transparent;
-		flex: 1;
+	@keyframes scale{
+		from {transform: scale(0);}
+		to {transform: scale(1);}
 	}
 
-	#projects ul {
-		margin: 2.4rem;
-		display: grid;
-      	grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
-	}
-
-	#info li {
-		margin-right: 0.25em;
-	}
-
-	#info li:not(:last-child) p::after {
-		content: ","
-	}
 
 	p{
 		color: hsl(0, 0%, 95%);
 		font-weight: 300;
 	}
 
-
-	.label{
-		font-style: italic;
-		color: #fff;
-		margin-bottom: 0.25em;
-		font-weight:400;
+	@media screen and (min-width: 400px){
+		header{
+			display: flex;
+			align-items: center;
+			margin-bottom: 2rem;
+	
+		
 	}
-
+	}
 
 	@media screen and (min-width: 800px){
 
 		main{
-			width: 90%;
+			width: 80%;
 			margin: 0 auto;
 		}
 		

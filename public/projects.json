@@ -1,22 +1,33 @@
 [{
     "id": "1",
     "title": "Comet raids",
-    "description_short": "2D spel skrivet med C++ och SFML",
-    "description_long": "Detta var det första projektet jag gjorde tillsammans med en klasskamrat i en kurs om objektorientering. Spelarens uppgift är att förstöra kometer som närmar sig jorden. Detta sker genom placering av bomber inuti kometerna. På vägen måste spelaren akta sig för svävande isblock av varierande storlek genom att skjuta sönder dem. Spelaren navigerar en farkost genom att använda tagentbordets w, a, s, d. q och e tagenter. Dessa kontrollerar farkostens rörelser i två dimentioner samt rotation. Till sin hjälp har spelaren vapen i form av projektiler som avfyras med Space-bar samt bomber som avfyras med b-tangenten.",
+    "description_short": "2D spel",
+    "description_long": "Detta projekt har jag gjort tillsammans med en klasskamrat i en kurs om objektorientering. Spelarens uppgift är att förstöra kometer som närmar sig jorden. Detta sker genom placering av bomber inuti kometerna. På vägen måste spelaren akta sig för svävande isblock av varierande storlek genom att skjuta sönder dem.",
     "year": "2019",
     "techniques": ["C++", "SFML"],
     "github": "",
-    "images": ["images/comet_raids_1.png", "images/comet_raids_2.png"]
+    "images": ["comet_raids1.png", "comet_raids2.png", "comet_raids3.png"]
 },
 
 {
     "id": "2",
     "title": "Vanilla",
     "description_short": "Imperativt programmeringsspråk",
-    "description_long": "",
+    "description_long": "Detta projekt har jag gjort i en kurs där vi skulle implementera ett datorspråk. Vanilla är ett språk som innehåller vanliga konstruktioner, till exempel funktioner, repetitions- och villkortssatser. Språket är typat och inkluderar datatyperna Int, Float, String, Bool, List och Map.",
     "year": "2020",
     "techniques": ["Ruby"],
-    "images": ["images/vanilla1.png", "images/vanilla2.png"],
+    "images": ["vanilla1.png", "vanilla2.png", "vanilla3.png"],
+    "github": ""
+},
+
+{
+    "id": "5",
+    "title": "Djupviks hamn",
+    "description_short": "Hemsida för ett fiskeläge",
+    "description_long": "Detta är den första webbapplikationen jag gjorde. Det var under en sommarkurs där vi fick ett avslutande projekt om att skapa en hemsida till ett fiskeläge som finns på Gotland.",
+    "year": "2021",
+    "techniques": ["Vanilla JS, HTML, CSS"],
+    "images": ["qfilm1.png", "qfilm2.png",  "qfilm3.png"],
     "github": ""
 },
 
@@ -24,34 +35,46 @@
 {
     "id": "3",
     "title": "theChat",
-    "description_short": "Peer-to-peer chatt-app",
-    "description_long": "Denna applikation har jag gjort tillsammans med en klasskamrat under en projektkurs. I och med detta fick vi testa på att använda ett nytt programmeringsspråk C#, skriva ett program för desktops samt implementera socket connections.",
+    "description_short": "Peer-to-peer chatt",
+    "description_long": "Denna applikation har jag gjort tillsammans med en klasskamrat under en projektkurs. I och med detta fick vi testa på att använda ett nytt programmeringsspråk C#, skriva ett program för Windows desktop samt implementera socket connections.",
     "year": "2020",
     "techniques": ["C#", ".NET"],
-    "images": ["images/theChat1.png", "images/theChat2.png",  "images/theChat3.png"],
+    "images": ["theChat1.png", "theChat2.png",  "theChat3.png"],
     "github": ""
 },
 
 {
     "id": "4",
     "title": "Qfilm",
-    "description_short": "Film app för HBTQ+ filmer",
-    "description_long": "Denna applikation gjorde jag under termin 3 och är skriven i Android Java. Förutom att Android var nytt lärde jag mig också designmönstret MVVM, användning av ramverk för dependency injections och testning med hjälp av 'mocks'",
+    "description_short": "Applikation för HBTQ+ filmer",
+    "description_long": "Denna applikation gjorde jag under termin 3 och är skriven i Android Java. Förutom att Android var nytt lärde jag mig också designmönstret MVVM, användning av ramverk för dependency injection och enheterstestning med hjälp av mocks",
     "year": "2020",
-    "techniques": ["Android", "Java", "Dagger2", "Mockito"],
-    "images": ["images/qfilm1.png", "images/qfilm2.png",  "images/qfilm3.png"],
+    "techniques": ["Android", "Java", "Dagger2", "Mockito", "Firebase"],
+    "images": ["qfilm1.png", "qfilm2.png",  "qfilm3.png"],
     "github": ""
 },
 
 {
     "id": "5",
     "title": "Transportliggaren",
-    "description_short": "En applikation för planering av transporter",
-    "description_long": "I termin 4 har vi haft en projektkurs där vi i grupp på 5 personer har samarbetat med ett företag för att ta fram ett nytt system till dem. Applikationen ska användas till att planera resor, hantera felanmälningar av fordon samt som schema för chaufförerna i verksamheten.",
+    "description_short": "Applikation för planering av transporter",
+    "description_long": "I termin 4 har vi haft en projektkurs där vi i grupp på 5 personer har samarbetat med ett företag för att ta fram ett nytt system till dem. Applikationen ska användas till att planera företagets, hantera felanmälningar av fordon samt som schema för chaufförerna i verksamheten.",
     "year": "2021",
-    "techniques": ["Svelte"],
-    "images": ["images/qfilm1.png", "images/qfilm2.png",  "images/qfilm3.png"],
+    "techniques": ["Svelte", "Express", "MongoDB", "Mocha"],
+    "images": ["qfilm1.png", "qfilm2.png",  "qfilm3.png"],
     "github": ""
+},
+
+{
+ "id": "6",
+    "title": "What todo",
+    "description_short": "Todo app",
+    "description_long": "Detta är en app som jag håller på med just nu eftersom jag ville lära mig react native samt hur publicering av en applikation går till. Projektet är ungefär halvklart. ",
+    "year": "2021",
+    "techniques": ["React native", "Jest"],
+    "images": ["qfilm1.png", "qfilm2.png",  "qfilm3.png"],
+    "github": ""
+
 }
 
 ]
