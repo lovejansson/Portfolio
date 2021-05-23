@@ -1,62 +1,62 @@
 <script>
-    import { createEventDispatcher } from "svelte";
-       
+    export let images = [];
 
-const dispatch = createEventDispatcher();
-export let images = [];
+    function close(){
 
-function close(){
-
-history.back();
-  
-}
+        history.back();
+    }
 
 </script>
 
-
-
-
 <section>
 
-<button on:click={close}>
-<svg viewBox="0 0 100 100">
-<path d="M 10 10 L 90 90 M 90 10 L 10 90">
-</path></svg></button>
+    <button on:click={close}>
+        <svg viewBox="0 0 100 100">
+            <path d="M 10 10 L 90 90 M 90 10 L 10 90"/>
+        </svg>
+    </button>
+    <ul>
 
-<ul>
+    {#each images as img}
 
-{#each images as img}
+        <li>
+            <img src={`/images/${img.file_name}`} alt="" width={img.width} height={img.height} /> 
+        </li>
 
-<li><img src={`/images/${img}`}/> </li>
+    {/each}
 
-{/each}
-
-</ul>
+    </ul>
 
 </section>
 
 <style>
 
+section {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-Index: 100;
+        overflow-y: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 
-button{
-   
-    position: sticky;
-    top: 2.4rem;
-    
-    margin: 2.4rem;
-    left: 100vw;
-    padding:0.75em;
-    border-radius: 2px;
-     background-color: hsl(226, 47%, 41%);
-    box-shadow: 4px 3px 0 0 hsl(226, 47%, 21%);
-  
-    line-height: 0.5;
-    z-index: 2;
-    
-}
+
+    button{
+        position: fixed;
+        top: 2.4rem;
+        right: 4.8rem;
+        padding:0.75em;
+        border-radius: 2px;
+        background-color: hsl(226, 47%, 41%);
+        box-shadow: 4px 3px 0 0 hsl(226, 47%, 21%);
+        line-height: 0.5;      
+    }
+
     svg{
         fill: transparent;
-        stroke: hsl(0, 0%, 90%);
+        stroke: hsl(0, 0%, 85%);
         stroke-width: 12;
         width: 2.4rem;
         height: 2.4rem;  
@@ -68,42 +68,26 @@ button{
     }
 
 
-  button:hover, button:focus{
-    background-color: hsl(226, 47%, 21%);
-    box-shadow: 4px 3px 0 0 hsl(226, 47%, 8%);
+    button:hover, button:focus{
+        background-color: hsl(226, 47%, 21%);
+        box-shadow: 4px 3px 0 0 hsl(226, 47%, 8%);
 
-  }
-
- 
-
-
-
-    section {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-Index: 100;
-        overflow-y: auto;
-        background-color: rgba(0, 0, 0, 0.5);
     }
 
+ 
     ul{
-        position: absolute;
-        top: 0;
-        left: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        
         z-index: 1;
       
     }
 
     img{
         width: 100%;
-        height: 100%;
-        margin: 0;
+        height: auto;
+        margin: 0 auto;
     
     }
 
@@ -114,10 +98,9 @@ button{
     }
 
 
-
     @media screen and (min-width: 600px){
         li {
-            width: 75%;
+            width: 65%;
             margin: 0 auto;
         }
     }

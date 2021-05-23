@@ -59,7 +59,9 @@ function handleWebHistory(){
     <h2>{project.title}</h2>
     <section id="links">
     <button on:click={showScreenshots}><span class="fa fa-picture-o"></span>Screenshots</button>
-    <button><span class="fa fa-github"></span>Github</button>
+    {#if project.github !== ""}
+    <button><span class="fa fa-github"></span><a href={project.github}>Github</a></button>
+    {/if}
     </section>
     <p>{project.description_long}</p>
     
