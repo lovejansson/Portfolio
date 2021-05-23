@@ -1,11 +1,11 @@
 <script>
 	import { onMount } from "svelte";
 
-	import { Particle } from "./particle/Particle.js";
+	import { Particle } from "../particle/Particle.js";
 
-	import Card from "./components/Card.svelte";
+	import Card from "../components/Card.svelte";
 
-	import Details from "./components/Details.svelte";
+	import Details from "../components/Details.svelte";
 
 	let showingDetails = false;
 	

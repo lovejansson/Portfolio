@@ -5,7 +5,6 @@
 
 <section>
 
-<h2></h2>
 
 <p>
   <span class="fa fa-terminal"></span> <br/> Jag är en utvecklare och student från Nyköping. De senaste två åren har jag studerat på programmet innovativ programmering i Linköping.
