@@ -19,7 +19,7 @@
     "techniques": ["Ruby"],
     "images": [{"file_name": "vanilla_foreach.png", "width": "858", "height": "483"},
         {"file_name": "vanilla_lambda.png", "width": "947", "height": "533"}, {"file_name": "vanilla_string.png", "width": "1140", "height": "642"}],
-    "github": ""
+    "github": "https://github.com/lovejansson/Vanilla"
 },
 
 {
@@ -31,7 +31,7 @@
     "techniques": ["Vanilla JS, HTML, CSS"],
     "images": [{"file_name": "djupvik_start.png", "width": "1668", "height":"938"}, {"file_name": "djupvik_gasthamn.png", "width": "1658", "height":"933"}
         ,  {"file_name": "djupvik_medlem.png", "width": "1633", "height":"918"}],
-    "github": "https://github.com/lovejansson/Djupviks-hamn/tree/master"
+    "github": "https://github.com/lovejansson/Djupviks-hamn/"
 },
 
 
@@ -44,12 +44,12 @@
     "techniques": ["C#", ".NET"],
     "images": [{"file_name": "theChat_listening.png", "width": "1920", "height": "1080"}, {"file_name": "theChat_request.png", "width": "1687", "height": "949"},
         {"file_name": "theChat_chat.png", "width": "1920", "height": "1080"}],
-    "github": ""
+    "github": "https://github.com/lovejansson/theChat"
 },
 
 {
     "id": "4",
-    "title": "Qfilm",
+    "title": "Qfilms",
     "description_short": "Applikation för HBTQ+ filmer",
     "description_long": "Denna applikation gjorde jag under termin 3 och är skriven i Android Java. Förutom att Android var nytt lärde jag mig också designmönstret MVVM, användning av ramverk för dependency injection och enheterstestning med hjälp av mocks.",
     "year": "2020",
@@ -57,7 +57,7 @@
     "images": [{"file_name": "qfilm_movies.png", "width": "1656", "height": "931"}, 
         {"file_name": "qfilm_search.png", "width": "1648", "height": "927"},  
         {"file_name": "qfilm_details.png", "width": "1656", "height": "930"}],
-    "github": ""
+    "github": "https://github.com/lovejansson/Qfilms"
 },
 
 {
@@ -81,8 +81,7 @@
     "techniques": ["React native", "Jest"],
     "images": [{"file_name": "whattodo_lists.png", "width":"1548", "height":"870"}, 
         {"file_name": "whattodo_dinner.png", "width":"1541", "height":"863"},  {"file_name": "whattodo_empty.png", "width":"1531", "height":"860"}],
-    "github": ""
-
+    "github": "https://github.com/lovejansson/What_todo"
 }
 
 ]
