@@ -1,5 +1,7 @@
 <script>
-	import { onMount } from "svelte";
+	import { onDestroy, onMount } from "svelte";
+
+	import { Router, Link, Route } from "svelte-routing";
 
 	import { Particle } from "./particle/Particle.js";
 
@@ -9,17 +11,20 @@
 
 	let ctx;
 	let canvas;
-	let starz;
+	let stars;
+	let starsTimeout;
 
-	let currentPage = "projects";
+	export let url = "";
 
 	onMount(async () => {
-		history.replaceState({ page: "projects" }, document.title);
-
 		ctx = canvas.getContext("2d");
-		starz = createStars();
-		updateStars();
+		updateCanvas();
+		addEventListener("resize", updateCanvas);
 	});
+
+	onDestroy(()=>{
+		removeEventListener("resize", updateCanvas);
+	})
 
 	function setCanvasMetrics() {
 		let canvasWidth = canvas.getBoundingClientRect().width;
@@ -29,26 +34,25 @@
 	}
 
 	function createStars() {
-		setCanvasMetrics();
 
 		let particle;
 
 		let particles = [];
 
-		let num = window.innerWidth;
-		for (let i = 0; i < num; ++i) {
+		for (let i = 0; i < window.innerWidth; ++i) {
 			let x = Math.random() * canvas.width;
 			let y = Math.random() * canvas.height;
 			let alpha = Math.random().toFixed(1);
 			let radius;
 			let tinkle;
 
+
 			if (i % 2 == 0) {
-				radius = Math.random() * 1.2;
+				radius = Math.random() * 1;
 				tinkle = radius > 0.4;
 			} else {
 				radius = Math.random() / 2;
-				tinkle = radius > 0.1;
+				tinkle = radius > 0.2;
 			}
 
 			particle = new Particle(
@@ -68,51 +72,54 @@
 	function updateStars() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-		starz.forEach((star) => {
+		stars.forEach((star) => {
 			star.update();
 			star.draw();
 		});
 
-		setTimeout(updateStars, 100);
+		starsTimeout = setTimeout(updateStars, 100);
 	}
 
-	function changePage(page) {
-		currentPage = page;
+	function updateCanvas(){
+		setCanvasMetrics();
+		clearTimeout(starsTimeout);
+		stars = createStars();
+		updateStars();
 	}
 
-	function changePageToProjects() {
-		changePage("projects");
+	function getProps({href, isPartiallyCurrent, isCurrent }) {
+		const isActive =
+			href === "/" ? isCurrent : isPartiallyCurrent || isCurrent;
+
+		// The object returned here is spread on the anchor element's attributes
+		if (isActive) {
+			return { class: "active" };
+		}
+		return {};
 	}
 
-	function changePageToAbout() {
-		changePage("about");
+	function removeFocus(event){
+		event.detail.target.blur();
 	}
 </script>
 
-<div on:resize={createStars} id="content">
-	<header>
-		<h1>Love</h1>
-		<nav>
-			<button
-				class:current-page={currentPage === "projects"}
-				on:click={changePageToProjects}>Projects</button
-			>
-			<button
-				class:current-page={currentPage === "about"}
-				on:click={changePageToAbout}>About</button
-			>
-		</nav>
-	</header>
-	<main>
-		{#if currentPage === "projects"}
-			<Projects />
-		{:else}
-			<About />
-		{/if}
-	</main>
-</div>
+<Router {url}>
+	<div  id="content">
+		<header>
+			<h1>Love</h1>
+			<nav>
+				<Link to="/" {getProps} on:click={removeFocus}>Projects</Link>
+				<Link to="/about" {getProps} on:click={removeFocus}>About</Link>
+			</nav>
+		</header>
+		<main>
+			<Route path="/" component={Projects} />
+			<Route path="/about" component={About} />
+		</main>
+	</div>
 
-<canvas bind:this={canvas} />
+	<canvas bind:this={canvas} />
+</Router>
 
 <style>
 	canvas {
@@ -138,40 +145,9 @@
 	}
 
 	header {
-		padding: 0 1em;
-	}
-	header > * {
-		margin-right: 1em;
+		margin: 0 1em;
 	}
 
-	nav button {
-		color: #fff;
-		margin: 0.5em;
-		padding: 0;
-	}
-
-	button:hover,
-	button:focus {
-		color: hsl(0, 0%, 75%);
-	}
-
-	.current-page {
-		position: relative;
-	}
-
-	.current-page::before {
-		content: "";
-		width: 0.4em;
-		height: 0.4em;
-		position: absolute;
-		top: 0.4em;
-		left: -0.6em;
-		border-radius: 2px;
-		background-color: hsl(226, 47%, 51%);
-		box-shadow: 3px 2px 0 0 hsl(226, 47%, 21%);
-		animation-name: scale;
-		animation-duration: 0.2s;
-	}
 
 	@keyframes scale {
 		from {

@@ -1,106 +1,71 @@
 <script>
 	import { onMount } from "svelte";
-
-	import { Particle } from "../particle/Particle.js";
-
 	import Card from "../components/Card.svelte";
-
 	import Details from "../components/Details.svelte";
 
 	let showingDetails = false;
-	
-	 let projects;
-     let currentProject;
-	
+
+	let projects;
+	let currentProjectIdx;
+	let focusCloseButton;
+	let ul;
 
 	onMount(async () => {
+		let projectsLocal;
 
-		addEventListener("popstate", navigationListener);
+		let projectsJson = await fetch("/projects.json");
 
-        let projectsLocal;
-
-		let projectsJson = await fetch("/projects.json")
 		projectsLocal = await projectsJson.json();
 
-        projects = projectsLocal;
-
-    console.log("projects")
-        console.log(projects);
-
-		
+		projects = projectsLocal;
 	});
 
-
-	function showDetails(project){
-      
+	function showDetails(event, projectIdx) {
 		showingDetails = true;
-        currentProject =project;
-
-		handleWebHistory();
+		currentProjectIdx = projectIdx;
+		focusCloseButton = event.key === "Enter";
 	}
 
-	function navigationListener(event){
-		if(event.state.page === "details"){
-			showingDetails = true;
-		}else if(event.state.page === "projects"){
-			showingDetails = false;
-		}else{
-			
+	function closeDetails() {
+		showingDetails = false;
+		if (focusCloseButton) {
+			ul.children[currentProjectIdx].focus();
 		}
-
 	}
-
-
-	function handleWebHistory(){
-
-		history.pushState({page: "details"}, document.title);
-		//navigateBackListener = addEventListener("popstate", navigateBackListener);
-}
-
-
 </script>
 
-   
-   {#if projects}
-
-    <section id="projects">
-		<ul>	
-        {#each projects as project, idx}
-
-    
-
-        <Card mode={ idx % 2 === 0 ? "dark" : "light"} {project}
-                on:click={()=>{showDetails(project)}}/>
-
-        {/each}
-		
+{#if projects}
+	<section>
+		<ul bind:this={ul}>
+			{#each projects as project, idx}
+				<Card
+					mode={idx % 2 === 0 ? "dark" : "light"}
+					{project}
+					on:click={(event) => {
+						showDetails(event, idx);
+					}}
+					on:keypress={(event) => {
+						showDetails(event, idx);
+					}}
+				/>
+			{/each}
 		</ul>
-
 	</section>
+{/if}
 
-
-    {/if}
-	
-
-
-	{#if showingDetails}
-
-<Details project={currentProject}/>
-	{/if}
+{#if showingDetails}
+	<Details
+		project={projects[currentProjectIdx]}
+		on:close={closeDetails}
+		{focusCloseButton}
+	/>
+{/if}
 
 <style>
-
-	#projects ul {
+	ul {
 		margin: 1.6rem;
-        margin-top:0rem;
+		margin-top: 0rem;
 		display: grid;
-      	grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
 	}
-
-	p{
-		color: hsl(0, 0%, 95%);
-		font-weight: 300;
-	}
-
-
 </style>

@@ -1,13 +1,28 @@
 <script>
-    export let images = [];
+    import { createEventDispatcher, onMount } from "svelte";
 
-    function close() {
-        history.back();
+    const dispatch = createEventDispatcher();
+
+    export let images = [];
+    let closeButton;
+
+    export let focusCloseButton = false;
+
+    onMount(()=>{
+        if(focusCloseButton){
+            closeButton.focus();
+        }
+    });
+
+    function close(event) {
+        event.stopPropagation();
+        dispatch("close");
     }
+
 </script>
 
 <section>
-    <button on:click={close}>
+    <button bind:this={closeButton} on:click={close}>
         <svg viewBox="0 0 100 100">
             <path d="M 10 10 L 90 90 M 90 10 L 10 90" />
         </svg>

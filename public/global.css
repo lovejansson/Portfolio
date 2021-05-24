@@ -40,11 +40,6 @@ h2 {
     font-size: 4.2rem;
 }
 
-nav button {
-    font-family: "Lateef";
-    font-size: 3.2rem;
-}
-
 button:hover {
     cursor: pointer;
 }
@@ -67,9 +62,41 @@ a:active {
     text-decoration: none;
 }
 
+.active {
+    position: relative;
+}
+
+.active::before {
+    content: "";
+    width: 0.4em;
+    height: 0.4em;
+    position: absolute;
+    top: 0.4em;
+    left: -0.6em;
+    border-radius: 2px;
+    background-color: hsl(226, 47%, 51%);
+    box-shadow: 3px 2px 0 0 hsl(226, 47%, 21%);
+    animation-name: scale;
+    animation-duration: 0.2s;
+}
+
+nav a {
+    font-family: "Lateef";
+    font-size: 3.2rem;
+    color: #fff;
+    margin-left: 1em;
+    padding: 0;
+}
+
+nav a:hover,
+nav a:focus {
+    color: hsl(0, 0%, 50%);
+    outline: none;
+}
+
 p,
 button {
-    font-family: "Yantramanav", monospace;
+    font-family: "Padauk", monospace;
 }
 
 button {

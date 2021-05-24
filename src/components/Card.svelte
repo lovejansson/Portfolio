@@ -1,10 +1,12 @@
 <script>
+ 
   export let project = {};
 
   export let mode = "dark";
+
 </script>
 
-<div tabindex="0" class={mode === "dark" ? "dark" : "light"} on:click>
+<div tabindex="0" class={mode === "dark" ? "dark" : "light"} on:click on:keypress>
   <h2>{project.title}</h2>
   <p>{project.description_short}</p>
 
@@ -41,7 +43,7 @@
   }
 
   p {
-    color: hsl(0, 0%, 82%);
+    color: hsl(0, 0%, 90%);
     font-size: 1.6rem;
   }
 
@@ -69,33 +71,12 @@
     cursor: pointer;
   }
 
-  .light:hover span,
-  .light:focus span {
-    color: hsl(226, 47%, 0%);
-  }
-  .dark:hover span,
-  .dark:focus span {
-    color: hsl(226, 48%, 8%);
-  }
-
   ul {
     margin-top: auto;
   }
 
-  .dark span {
-    color: hsl(226, 47%, 1%);
-  }
-
-  .light span {
-    color: hsl(226, 48%, 9%);
-  }
-
-  .dark li p {
-    color: hsl(226, 47%, 1%);
-  }
-
-  .light li p {
-    color: hsl(226, 48%, 9%);
+  li p {
+    color: hsl(0, 0%, 100%);
   }
 
   li p {
@@ -105,15 +86,6 @@
 
   li:not(:last-child) p::after {
     content: ",";
-  }
-
-  .light:hover li p,
-  .light:focus li p {
-    color: hsl(226, 47%, 0%);
-  }
-  .dark:hover li p,
-  .dark:focus li p {
-    color: hsl(226, 48%, 8%);
   }
 
   span {

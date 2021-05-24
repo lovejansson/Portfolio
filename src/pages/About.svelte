@@ -1,20 +1,17 @@
 <script>
 </script>
 
-
-
 <section>
 
-
 <p>
-  <span class="fa fa-terminal"></span> <br/> Jag är en utvecklare och student från Nyköping. De senaste två åren har jag studerat på programmet innovativ programmering i Linköping.
+  <span class="fa fa-terminal"></span> <br/> Jag är en utvecklare och student från Nyköping. De senaste två åren har jag pluggat via programmet innovativ programmering på Linköpings universitet.
     Under utbildningen har vi gjort applikationer för olika plattformar; webb, mobil
     och desktop, vilket har inkluderat både frontend- och backendutveckling.
 </p>
 
 <p>
-    Med mer erfarenhet har jag fastnat för frontend utveckling eftersom det är mer visuellt och jag får då programmera sådant som den slutliga användaren ska interagera med. Därför vill jag gärna
-    bli bättre på att skapa intuitiva och snygga användargränssnitt för olika enheter. 
+    Med mer erfarenhet har jag fastnat för frontend utveckling eftersom jag då får programmera sådant som den slutliga användaren ska interagera med, det är mer visuellt och roligare. 
+    Därför vill jag lära mig mer och bli bättre inom det området. 
 </p>
 
 <p>

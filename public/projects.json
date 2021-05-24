@@ -1,87 +1,92 @@
 [{
-    "id": "1",
-    "title": "Comet raids",
-    "description_short": "2D spel",
-    "description_long": "Detta projekt har jag gjort tillsammans med en klasskamrat i en kurs där vi skulle applicera det vi tidigare hade lärt oss om objektorientering. Spelarens uppgift är att förstöra kometer som närmar sig jorden. Detta sker genom placering av bomber inuti kometerna. På vägen måste spelaren akta sig för svävande isblock av varierande storlek genom att skjuta sönder dem.",
-    "year": "2019",
-    "techniques": ["C++", "SFML"],
-    "github": "",
-    "images": [{"file_name": "cometraids_startscreen.png", "width": "1194", "height": "671"}, 
-        {"file_name": "cometraids_gameview.png", "width": "1404", "height": "789"}, {"file_name": "cometraids_bomb.png", "width": "1834", "height": "1032"}]
-},
+        "id": "1",
+        "title": "Comet raids",
+        "description_short": "2D spel",
+        "description_long": "Detta projekt har jag gjort tillsammans med en klasskamrat i en kurs där vi skulle applicera det vi tidigare hade lärt oss om objektorientering. Spelarens uppgift är att förstöra kometer som närmar sig jorden. Detta sker genom placering av bomber inuti kometerna. På vägen måste spelaren akta sig för svävande isblock av varierande storlek genom att skjuta sönder dem.",
+        "year": "2019",
+        "techniques": ["C++", "SFML"],
+        "images": [{ "file_name": "cometraids_startscreen.png", "width": "1194", "height": "671" },
+            { "file_name": "cometraids_gameview.png", "width": "1404", "height": "789" }, { "file_name": "cometraids_bomb.png", "width": "1834", "height": "1032" }
+        ],
+        "github": "https://github.com/lovejansson/Comet-raids"
+    },
 
-{
-    "id": "2",
-    "title": "Vanilla",
-    "description_short": "Imperativt programmeringsspråk",
-    "description_long": "Detta projekt har jag gjort i en kurs där vi skulle implementera ett datorspråk. Vanilla är ett språk som innehåller vanliga konstruktioner, till exempel funktioner, repetitions- och villkortssatser. Språket är typat och inkluderar datatyperna Int, Float, String, Bool, List och Map.",
-    "year": "2020",
-    "techniques": ["Ruby"],
-    "images": [{"file_name": "vanilla_foreach.png", "width": "858", "height": "483"},
-        {"file_name": "vanilla_lambda.png", "width": "947", "height": "533"}, {"file_name": "vanilla_string.png", "width": "1140", "height": "642"}],
-    "github": "https://github.com/lovejansson/Vanilla"
-},
+    {
+        "id": "2",
+        "title": "Vanilla",
+        "description_short": "Imperativt programmeringsspråk",
+        "description_long": "Detta projekt har jag gjort i en kurs där vi skulle implementera ett datorspråk. Vanilla är ett språk som innehåller vanliga konstruktioner, till exempel funktioner, repetitions- och villkortssatser. Språket är typat och inkluderar datatyperna Int, Float, String, Bool, List och Map.",
+        "year": "2020",
+        "techniques": ["Ruby"],
+        "images": [{ "file_name": "vanilla_foreach.png", "width": "858", "height": "483" },
+            { "file_name": "vanilla_lambda.png", "width": "947", "height": "533" }, { "file_name": "vanilla_string.png", "width": "1140", "height": "642" }
+        ],
+        "github": "https://github.com/lovejansson/Vanilla"
+    },
 
-{
-    "id": "5",
-    "title": "Djupviks hamn",
-    "description_short": "Hemsida för ett fiskeläge",
-    "description_long": "Detta är den första webbapplikationen jag gjorde. Det var under en sommarkurs där vi fick ett avslutande projekt om att skapa en hemsida till ett fiskeläge som finns på Gotland.",
-    "year": "2021",
-    "techniques": ["Vanilla JS, HTML, CSS"],
-    "images": [{"file_name": "djupvik_start.png", "width": "1668", "height":"938"}, {"file_name": "djupvik_gasthamn.png", "width": "1658", "height":"933"}
-        ,  {"file_name": "djupvik_medlem.png", "width": "1633", "height":"918"}],
-    "github": "https://github.com/lovejansson/Djupviks-hamn/"
-},
+    {
+        "id": "5",
+        "title": "Djupviks hamn",
+        "description_short": "Hemsida för ett fiskeläge",
+        "description_long": "Detta är en webbapplikation som gjorts i samband med att jag lärde mig HTMl, CSS och Javascript. Det var under en sommarkurs där vi fick ett avslutande projekt om att skapa en hemsida till ett fiskeläge som finns på Gotland.",
+        "year": "2021",
+        "techniques": ["Vanilla JS, HTML, CSS"],
+        "images": [{ "file_name": "djupvik_start.png", "width": "1668", "height": "938" }, { "file_name": "djupvik_gasthamn.png", "width": "1658", "height": "933" }, { "file_name": "djupvik_medlem.png", "width": "1633", "height": "918" }],
+        "github": "https://github.com/lovejansson/Djupviks-hamn/"
+    },
 
 
-{
-    "id": "3",
-    "title": "theChat",
-    "description_short": "Peer-to-peer chatt",
-    "description_long": "Denna applikation har jag gjort tillsammans med en klasskamrat under en projektkurs. I och med detta fick vi testa på att använda ett nytt programmeringsspråk C#, skriva ett program för Windows desktop samt implementera socket connections.",
-    "year": "2020",
-    "techniques": ["C#", ".NET"],
-    "images": [{"file_name": "theChat_listening.png", "width": "1920", "height": "1080"}, {"file_name": "theChat_request.png", "width": "1687", "height": "949"},
-        {"file_name": "theChat_chat.png", "width": "1920", "height": "1080"}],
-    "github": "https://github.com/lovejansson/theChat"
-},
+    {
+        "id": "3",
+        "title": "theChat",
+        "description_short": "Peer-to-peer chatt",
+        "description_long": "Denna applikation har jag gjort tillsammans med en klasskamrat under en projektkurs. I och med detta fick vi testa på att använda ett nytt programmeringsspråk C#, skriva ett program för Windows desktop samt implementera socket connections.",
+        "year": "2020",
+        "techniques": ["C#", ".NET"],
+        "images": [{ "file_name": "theChat_listening.png", "width": "1920", "height": "1080" }, { "file_name": "theChat_request.png", "width": "1687", "height": "949" },
+            { "file_name": "theChat_chat.png", "width": "1920", "height": "1080" }
+        ],
+        "github": "https://github.com/lovejansson/theChat"
+    },
 
-{
-    "id": "4",
-    "title": "Qfilms",
-    "description_short": "Applikation för HBTQ+ filmer",
-    "description_long": "Denna applikation gjorde jag under termin 3 och är skriven i Android Java. Förutom att Android var nytt lärde jag mig också designmönstret MVVM, användning av ramverk för dependency injection och enheterstestning med hjälp av mocks.",
-    "year": "2020",
-    "techniques": ["Android", "Java", "Dagger2", "Mockito", "Firebase"],
-    "images": [{"file_name": "qfilm_movies.png", "width": "1656", "height": "931"}, 
-        {"file_name": "qfilm_search.png", "width": "1648", "height": "927"},  
-        {"file_name": "qfilm_details.png", "width": "1656", "height": "930"}],
-    "github": "https://github.com/lovejansson/Qfilms"
-},
+    {
+        "id": "4",
+        "title": "Qfilms",
+        "description_short": "Applikation för HBTQ+ filmer",
+        "description_long": "Denna applikation gjorde jag under termin 3 och är skriven i Android Java. Förutom att Android var nytt lärde jag mig också designmönstret MVVM, användning av ramverk för dependency injection och enheterstestning med hjälp av mocks.",
+        "year": "2020",
+        "techniques": ["Android", "Java", "Dagger2", "Mockito", "Firebase"],
+        "images": [{ "file_name": "qfilm_movies.png", "width": "1656", "height": "931" },
+            { "file_name": "qfilm_search.png", "width": "1648", "height": "927" },
+            { "file_name": "qfilm_details.png", "width": "1656", "height": "930" }
+        ],
+        "github": "https://github.com/lovejansson/Qfilms"
+    },
 
-{
-    "id": "5",
-    "title": "Transportliggaren",
-    "description_short": "Applikation för planering av transporter",
-    "description_long": "I termin 4 har vi haft en projektkurs där vi i grupp på 5 personer har samarbetat med ett företag för att ta fram ett nytt system till dem. Applikationen ska användas till att planera företagets transporter, hantera felanmälningar av fordon samt som schema för chaufförerna.",
-    "year": "2021",
-    "techniques": ["Svelte", "Express", "MongoDB", "Mocha"],
-    "images": [{"file_name": "tt_calendar.png", "width":"1920", "height":"1080"}, 
-        {"file_name": "tt_planner.png", "width":"1920", "height":"1080"},  {"file_name": "tt_vehicle.png", "width":"1920", "height":"1080"}],
-    "github": ""
-},
+    {
+        "id": "5",
+        "title": "Transportliggaren",
+        "description_short": "Applikation för planering av transporter",
+        "description_long": "I termin 4 har vi haft en projektkurs där vi i grupp på 5 personer har samarbetat med ett företag för att ta fram ett nytt system till dem. Applikationen ska användas till att planera företagets transporter, hantera felanmälningar av fordon samt som schema för chaufförerna.",
+        "year": "2021",
+        "techniques": ["Svelte", "Express", "MongoDB", "Mocha"],
+        "images": [{ "file_name": "tt_calendar.png", "width": "1920", "height": "1080" },
+            { "file_name": "tt_planner.png", "width": "1920", "height": "1080" }, { "file_name": "tt_vehicle.png", "width": "1920", "height": "1080" }
+        ],
+        "github": ""
+    },
 
-{
- "id": "6",
-    "title": "What todo",
-    "description_short": "Todo app",
-    "description_long": "Detta är en app som jag håller på med just nu eftersom jag ville lära mig react native samt hur publicering av en applikation på google play store och app store går till. Projektet är ungefär halvklart. ",
-    "year": "2021",
-    "techniques": ["React native", "Jest"],
-    "images": [{"file_name": "whattodo_lists.png", "width":"1548", "height":"870"}, 
-        {"file_name": "whattodo_dinner.png", "width":"1541", "height":"863"},  {"file_name": "whattodo_empty.png", "width":"1531", "height":"860"}],
-    "github": "https://github.com/lovejansson/What_todo"
-}
+    {
+        "id": "6",
+        "title": "What todo",
+        "description_short": "Todo app",
+        "description_long": "Detta är en app som jag håller på med just nu eftersom jag ville lära mig react native samt hur publicering av en applikation på google play store och app store går till. Projektet är ungefär halvklart. ",
+        "year": "2021",
+        "techniques": ["React native", "Jest"],
+        "images": [{ "file_name": "whattodo_lists.png", "width": "1548", "height": "870" },
+            { "file_name": "whattodo_dinner.png", "width": "1541", "height": "863" }, { "file_name": "whattodo_empty.png", "width": "1531", "height": "860" }
+        ],
+        "github": "https://github.com/lovejansson/What_todo"
+    }
 
 ]
