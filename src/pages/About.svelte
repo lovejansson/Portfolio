@@ -21,7 +21,8 @@
 </p>
 
 <p>
-    Jag ser fram emot att få arbeta med andra duktiga och taggade människor på projekt som på något sätt kan bidra till nytta för någon annan. 😊
+    Jag gillar att arbeta tillsammans med andra ambitiösa och taggade personer och ser fram emot att få vara med i olika projekt som på något sätt kan bidra till nytta för någon annan. 😊
+  
 </p>
 
 

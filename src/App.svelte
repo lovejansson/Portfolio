@@ -108,8 +108,8 @@
 		<header>
 			<h1>Love</h1>
 			<nav>
-				<Link to="/" {getProps} on:click={removeFocus}>Projects</Link>
-				<Link to="/about" {getProps} on:click={removeFocus}>About</Link>
+				<Link to="/" {getProps} on:click={removeFocus}>Projekt</Link>
+				<Link to="/about" {getProps} on:click={removeFocus}>Om mig</Link>
 			</nav>
 		</header>
 		<main>

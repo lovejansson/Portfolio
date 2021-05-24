@@ -45,6 +45,7 @@
   p {
     color: hsl(0, 0%, 90%);
     font-size: 1.6rem;
+    line-height: 1;
   }
 
   .dark {
