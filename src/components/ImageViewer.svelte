@@ -29,7 +29,7 @@
     </button>
     <ul>
         {#each images as img}
-            <li>
+            <li tabindex="0">
                 <img
                     src={`/images/${img.file_name}`}
                     alt=""

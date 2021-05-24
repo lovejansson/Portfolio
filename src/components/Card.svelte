@@ -49,7 +49,7 @@
   }
 
   .dark {
-    background-color: hsl(226, 47%, 21%);
+    background-color: #1c284f;
     box-shadow: 4px 3px 0 0 hsl(226, 47%, 8%);
   }
 

@@ -130,8 +130,8 @@
 <style>
 
 	img{
-		width: 10rem;
-		height: 10rem;
+		width: 8rem;
+		height: 8rem;
 	}
 
 	#logo{
@@ -198,6 +198,12 @@
 	}
 
 	@media screen and (min-width: 800px) {
+
+		img{
+		width: 10rem;
+		height: 10rem;
+	}
+
 		main {
 			width: 70%;
 			margin: 0 auto;
