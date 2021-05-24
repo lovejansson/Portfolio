@@ -67,5 +67,6 @@
 		margin-top: 0rem;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+		
 	}
 </style>

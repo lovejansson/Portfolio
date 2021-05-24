@@ -35,7 +35,8 @@ section{
     background-color: #000;
     width: 90%;
     margin: 0 auto;
-
+  
+    margin-bottom: 1em;
     padding: 1em;
 
     z-index: 100;

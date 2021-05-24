@@ -99,7 +99,8 @@
 	}
 
 	function removeFocus(event){
-		event.detail.target.blur();
+	
+		event.detail.srcElement.blur();
 	}
 </script>
 
@@ -110,6 +111,7 @@
 			<nav>
 				<Link to="/" {getProps} on:click={removeFocus}>Projekt</Link>
 				<Link to="/about" {getProps} on:click={removeFocus}>Om mig</Link>
+				
 			</nav>
 		</header>
 		<main>
@@ -146,10 +148,11 @@
 
 	main {
 		overflow-y: auto;
+		
 	}
 
 	header {
-		margin: 0 1em;
+		margin: 1em;
 	}
 
 
