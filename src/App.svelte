@@ -21,11 +21,12 @@
 	onMount(async () => {
 		ctx = canvas.getContext("2d");
 		updateCanvas();
-		addEventListener("resize", updateCanvas);
+	//	addEventListener("resize", updateCanvas);
+		console.dir(canvas)
 	});
 
 	onDestroy(()=>{
-		removeEventListener("resize", updateCanvas);
+		//removeEventListener("resize", updateCanvas);
 	})
 
 	function setCanvasMetrics() {

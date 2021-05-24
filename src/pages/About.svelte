@@ -42,6 +42,7 @@ section{
     z-index: 100;
     flex: 1;
     border: 1px solid hsl(0, 0%, 25%);
+    overflow-y: auto;
    
 }
 
