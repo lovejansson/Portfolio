@@ -4,6 +4,7 @@ const app = require("./dist/App.js");
 createServer((req, res) => {
     const { html } = app.render({ url: req.url });
 
+
     res.write(`
     <!DOCTYPE html>
     <div id="app">${html}</div>
