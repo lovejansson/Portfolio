@@ -55,8 +55,10 @@
 
     button {
         position: fixed;
-        top: 2.4rem;
-        right: 4.8rem;
+        top: 0;
+        right: 0;
+        margin-top: 2.4rem;
+        margin-right: 2.4rem;
         padding: 0.75em;
         border-radius: 2px;
         background-color: hsl(226, 47%, 41%);
