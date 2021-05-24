@@ -107,7 +107,11 @@
 <Router {url}>
 	<div  id="content">
 		<header>
-			<h1>Love</h1>
+		
+			<section id="logo">
+			<img src="/images/Portrait_Sprite_8x.png" width="512" height="512" alt=""/>
+			<h1>Love Jansson</h1>
+			</section>
 			<nav>
 				<Link to="/" {getProps} on:click={removeFocus}>Projekt</Link>
 				<Link to="/about" {getProps} on:click={removeFocus}>Om mig</Link>
@@ -124,6 +128,20 @@
 </Router>
 
 <style>
+
+	img{
+		width: 10rem;
+		height: 10rem;
+	}
+
+	#logo{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		
+	
+	}
+
 	canvas {
 		position: fixed;
 		top: 0;
@@ -171,19 +189,23 @@
 			align-items: center;
 			margin-bottom: 2rem;
 		}
+
+		#logo {
+			margin-right: 3rem;
+		}
+	
+
 	}
 
 	@media screen and (min-width: 800px) {
 		main {
-			width: 80%;
+			width: 70%;
 			margin: 0 auto;
+		}
+
+		#logo {
+			margin-right: calc(15vw - 10rem);
 		}
 	}
 
-	@media screen and (min-width: 1200px) {
-		main {
-			width: 75%;
-			margin: 0 auto;
-		}
-	}
 </style>

@@ -55,9 +55,5 @@ p{
     margin-bottom: 1.2em;
 }
 
-@media screen and (min-width: 700px){
-    section{
-        width:75%;
-    }
-}
+
 </style>

@@ -34,10 +34,15 @@ body {
     src: url("./fonts/Yantramanav-Bold.ttf");
 }
 
-h1,
 h2 {
     font-family: "Lateef";
     font-size: 4.2rem;
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-family: "padauk";
+    text-align: center;
 }
 
 button:hover {
