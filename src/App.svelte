@@ -9,6 +9,8 @@
 
 	import About from "./pages/About.svelte";
 
+	import PageNotFound from "./pages/404.svelte";
+
 	let ctx;
 	let canvas;
 	let stars;
@@ -121,6 +123,7 @@
 		<main>
 			<Route path="/" component={Projects} />
 			<Route path="/about" component={About} />
+			<Route path="/*" component={PageNotFound}/>
 		</main>
 	</div>
 
