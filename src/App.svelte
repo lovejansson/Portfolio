@@ -1,5 +1,5 @@
 <script>
-	import { onDestroy, onMount, afterUpdate } from "svelte";
+	import { onDestroy, onMount } from "svelte";
 
 	import { Router, Link, Route } from "svelte-routing";
 
@@ -10,26 +10,35 @@
 	import About from "./pages/About.svelte";
 
 	import PageNotFound from "./pages/404.svelte";
+	import GIF from "./gif.js";
+
+
+
 
 	let ctx;
 	let canvas;
 	let stars;
 	let starsTimeout;
+	let iterations = 0;
+
+	let gif;
 
 	export let url = "";
 
 	onMount(async () => {
-		// ctx = canvas.getContext("2d");
-		// addEventListener("resize", updateCanvas);
-		// updateCanvas();
+// 		gif = new GIF({workers: 2, workerScript: "/gif.worker.js", quality: 10});
+// 		gif.on('finished', function(blob) {
+
+// 			console.log("on finnised")
+			
+//   window.open(URL.createObjectURL(blob));
+// });
+// 		ctx = canvas.getContext("2d");
+// 		addEventListener("resize", updateCanvas);
+// 		updateCanvas();
 	
 		
 	});
-
-	// afterUpdate(()=>{
-	// 	console.log("after update")
-	// 	updateCanvas();
-	// })
 
 	onDestroy(()=>{
 		removeEventListener("resize", updateCanvas);
@@ -79,6 +88,7 @@
 	}
 
 	function updateStars() {
+		console.log("UPDATE" + iterations)
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 		stars.forEach((star) => {
@@ -86,17 +96,35 @@
 			star.draw();
 		});
 
-		starsTimeout = setTimeout(updateStars, 100);
+		gif.addFrame(canvas, {delay: 100});
+		iterations++;
+		
+		if(iterations > 20){
+			
+			console.log("finisehd")
+		
+		
+		gif.render();
+		console.log("after ")
+			
+		}else{
+			starsTimeout = setTimeout(updateStars, 100);
+		}
+
+	
 	}
 
 	function updateCanvas(){
-		console.log("update canvas");
+
+		
+	
 		setCanvasMetrics();
-		console.log("canvaswidth " + canvas.width);
-		console.log("canvas height " + canvas.height);
+	
 		clearTimeout(starsTimeout);
 		stars = createStars();
-		updateStars();
+			updateStars();
+
+		
 	}
 
 	function getProps({href, isPartiallyCurrent, isCurrent }) {
@@ -137,7 +165,8 @@
 		</main>
 	</div>
 
-	<!-- <canvas bind:this={canvas} /> -->
+	<canvas bind:this={canvas} />
+
 </Router>
 
 <style>
@@ -155,19 +184,19 @@
 	
 	}
 
-	/* canvas {
+	canvas {
 		position: fixed;
 		top: 0;
 		width: 100%;
 		height: 100%;
 		background-color: #000000;
 		z-index: 0;
-	} */
+	}
 
 	#content {
 		display: flex;
 		flex-direction: column;
-		background: url("/images/stars.jpg");
+		background: url("/images/background_stars.gif");
 
 		position: fixed;
 		top: 0;
