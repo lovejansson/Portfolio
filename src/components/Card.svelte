@@ -14,7 +14,7 @@
     <li><span class="fas fa-code" /></li>
 
     {#each project.techniques as tech}
-      <li><p>{tech}</p></li>
+      <li><p class="tech">{tech}</p></li>
     {/each}
   </ul>
 </div>
@@ -81,7 +81,6 @@
   }
 
   li p {
-    font-family: "Yantramanav-bold";
     font-size: 1.5rem;
   }
 

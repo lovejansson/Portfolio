@@ -1,5 +1,5 @@
 <script>
-	import { onDestroy, onMount } from "svelte";
+	import { onDestroy, onMount, afterUpdate } from "svelte";
 
 	import { Router, Link, Route } from "svelte-routing";
 
@@ -19,13 +19,17 @@
 	export let url = "";
 
 	onMount(async () => {
-		ctx = canvas.getContext("2d");
-		addEventListener("resize", updateCanvas);
-		updateCanvas();
-		updateCanvas();
-		updateCanvas();
+		// ctx = canvas.getContext("2d");
+		// addEventListener("resize", updateCanvas);
+		// updateCanvas();
+	
 		
 	});
+
+	// afterUpdate(()=>{
+	// 	console.log("after update")
+	// 	updateCanvas();
+	// })
 
 	onDestroy(()=>{
 		removeEventListener("resize", updateCanvas);
@@ -133,7 +137,7 @@
 		</main>
 	</div>
 
-	<canvas bind:this={canvas} />
+	<!-- <canvas bind:this={canvas} /> -->
 </Router>
 
 <style>
@@ -151,18 +155,19 @@
 	
 	}
 
-	canvas {
+	/* canvas {
 		position: fixed;
 		top: 0;
 		width: 100%;
 		height: 100%;
 		background-color: #000000;
 		z-index: 0;
-	}
+	} */
 
 	#content {
 		display: flex;
 		flex-direction: column;
+		background: url("/images/stars.jpg");
 
 		position: fixed;
 		top: 0;

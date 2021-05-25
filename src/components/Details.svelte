@@ -69,7 +69,7 @@
         <li><span class="fas fa-code" /></li>
 
         {#each project.techniques as tech}
-            <li><p>{tech}</p></li>
+            <li><p class="tech">{tech}</p></li>
         {/each}
     </ul>
 </section>
@@ -79,11 +79,7 @@
 {/if}
 
 <style>
-    @font-face {
-        font-family: "Yantramanav";
-        src: url("./fonts/Yantramanav-Regular.ttf");
-    }
-
+  
     ul {
         display: flex;
         color: hsl(0, 0%, 85%);
