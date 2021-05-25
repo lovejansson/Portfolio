@@ -20,8 +20,10 @@
 
 	onMount(async () => {
 		ctx = canvas.getContext("2d");
-		updateCanvas();
 		addEventListener("resize", updateCanvas);
+		updateCanvas();
+		updateCanvas();
+		updateCanvas();
 		
 	});
 
@@ -86,6 +88,8 @@
 	function updateCanvas(){
 		console.log("update canvas");
 		setCanvasMetrics();
+		console.log("canvaswidth " + canvas.width);
+		console.log("canvas height " + canvas.height);
 		clearTimeout(starsTimeout);
 		stars = createStars();
 		updateStars();
