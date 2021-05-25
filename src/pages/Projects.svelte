@@ -64,9 +64,8 @@
 <style>
 	ul {
 		margin: 1.6rem;
-		margin-top: 0rem;
+		margin-top: 0;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
-		
 	}
 </style>

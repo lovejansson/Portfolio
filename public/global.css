@@ -20,11 +20,6 @@ body {
 }
 
 @font-face {
-    font-family: "Padauk";
-    src: url("./fonts/Padauk-Regular.ttf");
-}
-
-@font-face {
     font-family: "Yantramanav";
     src: url("./fonts/Yantramanav-Regular.ttf");
 }
@@ -34,13 +29,25 @@ body {
     src: url("./fonts/Yantramanav-Bold.ttf");
 }
 
+span,
+p,
+button,
+a {
+    color: hsl(0, 0%, 90%);
+    font-size: 1.6rem;
+    font-family: "Yantramanav";
+}
+
 h2 {
     font-family: "Lateef";
-    font-size: 4.2rem;
+    font-size: 2.8rem;
+    color: hsl(0, 0%, 100%);
+    font-weight: 400;
 }
 
 h1 {
     font-size: 1.6rem;
+    color: hsl(0, 0%, 100%);
     font-family: "yantramanav";
     text-align: center;
 }
@@ -49,39 +56,41 @@ button:hover {
     cursor: pointer;
 }
 
-button:focus {
+button:focus,
+a:focus {
     outline: none;
-}
-
-body {
-    color: #fff;
-    font-size: 1.8rem;
-    box-sizing: border-box;
 }
 
 a,
 a:focus,
 a:hover,
 a:active {
-    color: inherit;
+    color: hsl(0, 0%, 90%);
     text-decoration: none;
+}
+
+a:focus,
+a:hover,
+a:hover span,
+a:focus span {
+    color: hsl(0, 0%, 50%);
 }
 
 nav a {
     font-family: "Lateef";
+    color: hsl(0, 0%, 100%);
     font-size: 3.2rem;
     margin-left: 1em;
-    padding: 0;
+}
+
+.active {
+    position: relative;
 }
 
 nav a:hover,
 nav a:focus {
     color: hsl(0, 0%, 50%);
     outline: none;
-}
-
-.active {
-    position: relative;
 }
 
 .active::before {
@@ -98,9 +107,14 @@ nav a:focus {
     animation-duration: 0.2s;
 }
 
-p,
-button {
-    font-family: "Padauk", monospace;
+.tech {
+    font-family: "Yantramanav-bold";
+    font-size: 1.4rem;
+    margin-right: 0.25em;
+}
+
+.tech:first-child {
+    margin-right: 0.5em;
 }
 
 button {
@@ -112,6 +126,12 @@ ul {
     list-style-type: none;
 }
 
-.tech {
-    font-family: "Yantramanav-bold";
+@media screen and (max-width: 1000px) {
+    nav a:focus,
+    nav a:hover {
+        color: hsl(0, 0%, 100%);
+    }
+    nav a:active {
+        color: hsl(0, 0%, 50%);
+    }
 }

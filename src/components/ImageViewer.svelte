@@ -8,17 +8,15 @@
 
     export let focusCloseButton = false;
 
-    onMount(()=>{
-        if(focusCloseButton){
+    onMount(() => {
+        if (focusCloseButton) {
             closeButton.focus();
         }
     });
 
     function close(event) {
-        event.stopPropagation();
         dispatch("close");
     }
-
 </script>
 
 <section>
@@ -107,6 +105,12 @@
         li {
             width: 65%;
             margin: 0 auto;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        button {
+            margin-right: 4.8rem;
         }
     }
 </style>

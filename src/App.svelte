@@ -1,131 +1,14 @@
 <script>
-	import { onDestroy, onMount } from "svelte";
 
 	import { Router, Link, Route } from "svelte-routing";
-
-	import { Particle } from "./particle/Particle.js";
 
 	import Projects from "./pages/Projects.svelte";
 
 	import About from "./pages/About.svelte";
 
 	import PageNotFound from "./pages/404.svelte";
-	import GIF from "./gif.js";
-
-
-
-
-	let ctx;
-	let canvas;
-	let stars;
-	let starsTimeout;
-	let iterations = 0;
-
-	let gif;
 
 	export let url = "";
-
-	onMount(async () => {
-// 		gif = new GIF({workers: 2, workerScript: "/gif.worker.js", quality: 10});
-// 		gif.on('finished', function(blob) {
-
-// 			console.log("on finnised")
-			
-//   window.open(URL.createObjectURL(blob));
-// });
-// 		ctx = canvas.getContext("2d");
-// 		addEventListener("resize", updateCanvas);
-// 		updateCanvas();
-	
-		
-	});
-
-	onDestroy(()=>{
-		removeEventListener("resize", updateCanvas);
-	})
-
-	function setCanvasMetrics() {
-		let canvasWidth = canvas.getBoundingClientRect().width;
-		canvas.width = canvasWidth;
-		let canvasHeight = canvas.getBoundingClientRect().height;
-		canvas.height = canvasHeight;
-	}
-
-	function createStars() {
-
-		let particle;
-
-		let particles = [];
-
-		for (let i = 0; i < window.innerWidth; ++i) {
-			let x = Math.random() * canvas.width;
-			let y = Math.random() * canvas.height;
-			let alpha = Math.random().toFixed(1);
-			let radius;
-			let tinkle;
-
-
-			if (i % 2 == 0) {
-				radius = Math.random() * 1;
-				tinkle = radius > 0.4;
-			} else {
-				radius = Math.random() / 2;
-				tinkle = radius > 0.2;
-			}
-
-			particle = new Particle(
-				ctx,
-				x,
-				y,
-				radius,
-				`rgba(225, 225, 255, ${alpha}`,
-				tinkle
-			);
-			particles.push(particle);
-		}
-
-		return particles;
-	}
-
-	function updateStars() {
-		console.log("UPDATE" + iterations)
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-		stars.forEach((star) => {
-			star.update();
-			star.draw();
-		});
-
-		gif.addFrame(canvas, {delay: 100});
-		iterations++;
-		
-		if(iterations > 20){
-			
-			console.log("finisehd")
-		
-		
-		gif.render();
-		console.log("after ")
-			
-		}else{
-			starsTimeout = setTimeout(updateStars, 100);
-		}
-
-	
-	}
-
-	function updateCanvas(){
-
-		
-	
-		setCanvasMetrics();
-	
-		clearTimeout(starsTimeout);
-		stars = createStars();
-			updateStars();
-
-		
-	}
 
 	function getProps({href, isPartiallyCurrent, isCurrent }) {
 		const isActive =
@@ -139,7 +22,6 @@
 	}
 
 	function removeFocus(event){
-	
 		event.detail.srcElement.blur();
 	}
 </script>
@@ -155,7 +37,7 @@
 			<nav>
 				<Link to="/" {getProps} on:click={removeFocus}>Projekt</Link>
 				<Link to="/about" {getProps} on:click={removeFocus}>Om mig</Link>
-				
+			
 			</nav>
 		</header>
 		<main>
@@ -164,8 +46,6 @@
 			<Route path="/*" component={PageNotFound}/>
 		</main>
 	</div>
-
-	<canvas bind:this={canvas} />
 
 </Router>
 
@@ -180,23 +60,17 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		margin-top: 1em;
+		margin-left: 1em;
 		
 	
-	}
-
-	canvas {
-		position: fixed;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #000000;
-		z-index: 0;
 	}
 
 	#content {
 		display: flex;
 		flex-direction: column;
-		background: url("/images/background_stars.gif");
+		background-color: #000;
+		background: url("/images/background_stars.png");
 
 		position: fixed;
 		top: 0;
@@ -214,6 +88,7 @@
 
 	header {
 		margin: 1em;
+		margin-bottom: 0.5em;
 	}
 
 

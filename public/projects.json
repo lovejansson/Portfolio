@@ -39,7 +39,7 @@
     {
         "id": "3",
         "title": "theChat",
-        "description_short": "Peer-to-peer chatt",
+        "description_short": "Peer to peer chatt",
         "description_long": "Denna applikation har jag gjort tillsammans med en klasskamrat under en projektkurs. I och med detta fick vi testa på att använda ett nytt programmeringsspråk C#, skriva ett program för Windows desktop samt implementera socket connections.",
         "year": "2020",
         "techniques": ["C#", ".NET"],

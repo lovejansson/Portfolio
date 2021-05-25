@@ -11,7 +11,7 @@
   <p>{project.description_short}</p>
 
   <ul>
-    <li><span class="fas fa-code" /></li>
+    <li class="tech"><span class="fas fa-code" /></li>
 
     {#each project.techniques as tech}
       <li><p class="tech">{tech}</p></li>
@@ -27,25 +27,15 @@
     transition: 0.2s;
     display: flex;
     flex-direction: column;
+   
   }
 
   div:focus {
     outline: none;
   }
 
-  h2 {
-    font-size: 2.8rem;
-    font-weight: 400;
-  }
-
-  h2 + p {
-    margin-bottom: 0.5em;
-  }
-
-  p {
-    color: hsl(0, 0%, 90%);
-    font-size: 1.6rem;
-    line-height: 1;
+  div:hover{
+    cursor: pointer;
   }
 
   .dark {
@@ -57,7 +47,6 @@
   .dark:focus {
     background-color: hsl(226, 47%, 41%);
     box-shadow: 4px 3px 0 0 hsl(226, 47%, 21%);
-    cursor: pointer;
   }
 
   .light {
@@ -69,37 +58,24 @@
   .light:focus {
     background-color: hsl(226, 47%, 21%);
     box-shadow: 4px 3px 0 0 hsl(226, 47%, 8%);
-    cursor: pointer;
   }
 
-  ul {
-    margin-top: auto;
+  h2{
+    font-size: 2.4rem;
   }
 
-  li p {
-    color: hsl(0, 0%, 100%);
-  }
-
-  li p {
-    font-size: 1.5rem;
-  }
-
-  li:not(:last-child) p::after {
-    content: ",";
-  }
-
-  span {
-    font-size: 1.4rem;
-    font-weight: bold;
+  h2 + p {
+    margin-bottom: 0.5em;
   }
 
   ul {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    margin-top: auto;
   }
 
-  li {
-    margin-right: 0.25em;
+  li:not(:last-child) p::after {
+    content: ",";
   }
 </style>
