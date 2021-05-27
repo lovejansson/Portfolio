@@ -35,16 +35,18 @@
         background-color: #000;
         width: 90%;
         margin: 0 auto;
-        margin-bottom: 1em;
         padding: 1em;
-        z-index: 100;
+        margin-bottom: 2em;
+        padding-bottom: 0;
         flex: 1;
         border: 1px solid hsl(0, 0%, 25%);
-        overflow-y: auto;
+       
     }
 
     p,
     span {
         margin-bottom: 1.2em;
     }
+
+
 </style>

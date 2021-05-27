@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from "svelte";
+
 	import Card from "../components/Card.svelte";
 	import Details from "../components/Details.svelte";
 
@@ -11,6 +12,7 @@
 	let ul;
 
 	onMount(async () => {
+	
 		let projectsLocal;
 
 		let projectsJson = await fetch("/projects.json");
@@ -67,5 +69,7 @@
 		margin-top: 0;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+		height: 100%;
+		overflow: auto;
 	}
 </style>

@@ -71,14 +71,7 @@
 		flex-direction: column;
 		background-color: #000;
 		background: url("/images/background_stars.png");
-
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
 		height: 100%;
-		z-index: 1;
-	
 	}
 
 	main {
