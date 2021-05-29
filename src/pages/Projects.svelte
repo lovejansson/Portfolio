@@ -10,6 +10,7 @@
 	let currentProjectIdx;
 	let focusCloseButton;
 	let ul;
+	
 
 	onMount(async () => {
 	

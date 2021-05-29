@@ -1,9 +1,20 @@
 
+<script>
+ import {language} from "../stores";
+
+</script>
 <section>
+
+    {#if $language === "se"}
     <p>
         <span class="fa fa-terminal" /> <br /> <strong>404</strong> Här fanns
         det inget tyvärr ☹️ <br />
     </p>
+    {:else}
+    <p>
+        <span class="fa fa-terminal" /> <br /> <strong>404</strong> Nothing to see here ☹️ <br />
+    </p>
+    {/if}
 </section>
 
 <style>

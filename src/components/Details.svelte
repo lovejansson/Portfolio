@@ -1,6 +1,7 @@
 <script>
     import { createEventDispatcher, onMount } from "svelte";
     import ImageViewer from "./ImageViewer.svelte";
+    import {language} from "../stores";
 
     export let project = {};
     export let focusCloseButton = false;
@@ -62,7 +63,7 @@
             <a href={project.github}> <span class="fa fa-github" />Github</a>
         {/if}
     </section>
-    <p>{project.description_long}</p>
+    <p>{$language === "se" ? project.description_long_se : project.description_long_en}</p>
 
     <ul>
         <li class="tech"><span class="fas fa-code" /></li>
@@ -176,7 +177,7 @@
     svg {
         fill: transparent;
         stroke: #fff;
-        stroke-width: 12;
+        stroke-width: 16;
         width: 2.4rem;
         height: 2.4rem;
     }

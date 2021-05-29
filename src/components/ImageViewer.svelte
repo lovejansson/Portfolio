@@ -59,15 +59,14 @@
         margin-right: 2.4rem;
         padding: 0.75em;
         border-radius: 2px;
-        background-color: hsl(226, 47%, 41%);
-        box-shadow: 4px 3px 0 0 hsl(226, 47%, 21%);
+      
         line-height: 0.5;
     }
 
     svg {
         fill: transparent;
-        stroke: hsl(0, 0%, 85%);
-        stroke-width: 12;
+        stroke: hsl(0, 0%, 100%);
+        stroke-width: 16;
         width: 2.4rem;
         height: 2.4rem;
     }
@@ -76,10 +75,9 @@
         cursor: pointer;
     }
 
-    button:hover,
-    button:focus {
-        background-color: hsl(226, 47%, 21%);
-        box-shadow: 4px 3px 0 0 hsl(226, 47%, 8%);
+    button:hover svg,button:focus svg{
+        stroke: hsl(0, 0%, 50%);
+
     }
 
     ul {

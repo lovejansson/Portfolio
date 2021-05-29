@@ -1,5 +1,5 @@
 <script>
- 
+ 	import {language} from "../stores";
   export let project = {};
 
   export let mode = "dark";
@@ -8,7 +8,7 @@
 
 <div tabindex="0" class={mode === "dark" ? "dark" : "light"} on:click on:keypress>
   <h2>{project.title}</h2>
-  <p>{project.description_short}</p>
+  <p>{$language === "se" ? project.description_short_se : project.description_short_en}</p>
 
   <ul>
     <li class="tech"><span class="fas fa-code" /></li>
