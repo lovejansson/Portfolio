@@ -71,6 +71,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
 		height: 100%;
-		overflow: auto;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: auto;
 	}
 </style>

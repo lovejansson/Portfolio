@@ -48,6 +48,7 @@
         bottom: 0;
         z-index: 100;
         overflow-y: auto;
+        -webkit-overflow-scrolling: auto;
         background-color: rgba(0, 0, 0, 0.5);
     }
 
@@ -84,7 +85,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-
         z-index: 1;
     }
 
