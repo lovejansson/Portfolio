@@ -171,8 +171,8 @@
 
     #btn-close {
         align-self: flex-end;
-        margin-top: 1.6rem;
-        margin-right: 1.6rem;
+        margin-top: 2.4rem;
+        margin-right: 2.4rem;
     }
     svg {
         fill: transparent;

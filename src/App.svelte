@@ -114,14 +114,19 @@
 						>
 					</nav>
 
+					<section id="language-selection">
+				<img id="language-icon" src={$language === "se" ? "/images/sweden.png" : "images/united-kingdom.png"} height="64" width="64" alt="Change langauge of site"/>
+			
 					<select bind:value={$language} on:change={setLanguage}>
 						<option value="se" selected={$language === "se"}
-							>Svenska</option
+							>
+							 Svenska</option
 						>
 						<option value="en" selected={$language === "en"}
 							>English</option
 						>
 					</select>
+				</section>
 				</section>
 			{/if}
 		</header>
@@ -134,6 +139,7 @@
 </Router>
 
 <style>
+
 	img {
 		width: 8rem;
 		height: 8rem;
@@ -195,14 +201,26 @@
 		align-items: flex-start;
 	}
 
+	#language-selection {
+		display: flex;
+		align-items: center;
+		border-top: solid 1px hsl(0, 0%,25%);
+		padding-top: 2.4rem;
+	}
+
+	#language-icon {
+		width: 2.8rem;
+		height: 2.8rem;
+		margin-right: 1em;
+	}
 
 
 	select {
 		background-color: #000;
 		color: #fff;
-		padding: 0.5em;
+		padding: 0.3em;
 		border-radius: 4px;
-		margin-top: 2.4rem;
+		
 	}
 
 	#logo {
@@ -257,13 +275,18 @@
 			flex-direction: row;
 		}
 
-		select {
+		#language-selection{
 			position: fixed;
 			top: 0;
 			right: 0;
-			margin-top: 2.4rem;
-			margin-right: 2.4rem;
+			margin-top: 3.2rem;
+			margin-right: 3.2rem;
+			padding-top: 0;
+			border-top: none;
+		
 		}
+
+
 
 		img {
 			width: 10rem;

@@ -58,8 +58,10 @@
         right: 0;
         margin-top: 2.4rem;
         margin-right: 2.4rem;
-        padding: 0.75em;
+        padding: 0.5em;
         border-radius: 2px;
+        background-color: #000;
+        border-radius: 4px;
       
         line-height: 0.5;
     }
