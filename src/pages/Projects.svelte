@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from "svelte";
+	import About from "./About.svelte"
 
 	import Card from "../components/Card.svelte";
 	import Details from "../components/Details.svelte";

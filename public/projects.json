@@ -87,21 +87,6 @@
             { "file_name": "tt_planner.png", "width": "1920", "height": "1080" }, { "file_name": "tt_vehicle.png", "width": "1920", "height": "1080" }
         ],
         "github": ""
-    },
-
-    {
-        "id": "6",
-        "title": "What todo",
-        "description_short_se": "Todo app",
-        "description_long_se": "Detta är en app som jag håller på med just nu eftersom jag ville lära mig react native samt hur publicering av en applikation på google play store och app store går till.",
-        "description_short_en": "Todo app",
-        "description_long_en": "This is an ongoing project I'm doing to learn about React native and the process of publishing an application on google play store and app store.",
-        "year": "2021",
-        "techniques": ["React native", "Jest"],
-        "images": [{ "file_name": "whattodo_lists.png", "width": "1548", "height": "870" },
-            { "file_name": "whattodo_dinner.png", "width": "1541", "height": "863" }, { "file_name": "whattodo_empty.png", "width": "1531", "height": "860" }
-        ],
-        "github": "https://github.com/lovejansson/What_todo"
     }
 
 ]
