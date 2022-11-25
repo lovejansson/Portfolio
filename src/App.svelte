@@ -73,7 +73,7 @@
 		<header>
 			<section id="logo">
 				<img
-					src="/images/Portrait_Sprite_8x.png"
+					src="/images/Portrait_New 2 - 4x.png"
 					width="512"
 					height="512"
 					alt=""
